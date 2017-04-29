@@ -16,8 +16,8 @@
         <li><a routerLink="/add-listing">Add Listing</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a (click)="login()">Login</a></li>
-        <li><a (click)="logout()">Logout</a></li>
+        <li *ngIf="!(af.auth | async)"><a href="#" (click)="login()">Login</a></li>
+        <li *ngIf="(af.auth | async)"><a href="#" (click)="logout()">Logout</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
